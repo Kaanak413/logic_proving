@@ -29,6 +29,6 @@ example : (true -> false) -> false := by
   trivial
 
 
-example : false->P := by
-  intro hP
-  exfalso
+-- example : false->P := by
+--   intro hP
+--   exfalso

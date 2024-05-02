@@ -1,6 +1,6 @@
 import Mathlib.Topology.Basic
 import Mathlib.Tactic
-
+import Init
 variable (P Q R: Prop)
 
 example : P->Q->P := by
@@ -32,3 +32,8 @@ example : (true -> false) -> false := by
 -- example : false->P := by
 --   intro hP
 --   exfalso
+example (p q : Prop) : p ∨ q → q ∨ p := by
+  intro h
+  cases h with
+  | inl hp => apply Or.inr; exact hp
+  | inr hq => apply Or.inl; exact hq
